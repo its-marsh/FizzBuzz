@@ -6,29 +6,25 @@ import java.util.*;
 
 public class FizzBuzz {
 	
-public static void main (String [] args) {
+public static void main (String[] args) {
 	
 	List<String> fizzBuzz = new ArrayList<>();
 	
 	for(int i = 1; i <= 100; i++) {
-		
-		//check if array item is NOT divisible by 3 or 5 first, then add a number
-		//possible we could use "15" here since that is a common denominator
-		
-		if(i%3 != 0 && i%5 != 0) {
-		fizzBuzz.add(Integer.toString(i));
-		}
-		
-		//if it is divisible by 3 or 5, we begin our "fizzbuzz" additions
-		if(i%3 == 0 && i%5 ==0) {
+		//go through each element and check if divisible by 3 AND 5 first
+		if((i % 3 == 0) && (i % 5 == 0)) {
 		    fizzBuzz.add("FizzBuzz");
-		}else if(i%5 == 0) {
+		//check if divisible by 5 next
+		} else if(i % 5 == 0) {
 		    fizzBuzz.add("Buzz");
-		}else if(i%3 == 0) {
+		//check if divisible by 3 next
+		} else if(i % 3 == 0) {
 			fizzBuzz.add("Fizz");
+		//everything else displayed as normal
+		} else {
+			fizzBuzz.add(Integer.toString(i));
 		}
-	    
-	    System.out.println(fizzBuzz.get(i-1));
+	    System.out.println(fizzBuzz.get(i - 1));
 	}
 	System.out.println("FizzBuzz complete.");
 	
